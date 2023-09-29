@@ -1,0 +1,48 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://www.google.com" method="post" name="myForm">
+        <p><label for="name">Name</label><br>
+            <input type="text" name="name">
+        </p>
+        <p><label for="pass">Password</label><br>
+            <input type="password" name="pass">
+        </p>
+        <p><label for="cpass">Confirm Password</label><br>
+            <input type="password" name="cpass">
+        </p>
+        <p><input type="button" value="Submit" onclick="myValidation()"></p>
+    </form>
+    <script>
+        function myValidation() {
+            var x = document.myForm.name.value;
+            var y = document.myForm.pass.value;
+            var z = document.myForm.cpass.value;
+
+            if (x == "") {
+                alert("Name is required");
+            } else if (y == "") {
+                alert("Password is required");
+            } else if (y.length < 6) {
+                alert("minimum 6 alpha/numeric value required");
+            }
+            else if (z == "") {
+                alert("Please re-enter your password");
+            } else if (z != y) {
+                alert("Password is not matched");
+            } else {
+                document.myForm.submit();
+            }
+        }
+    </script>
+</body>
+
+</html>
